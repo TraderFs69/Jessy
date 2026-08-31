@@ -1,0 +1,54 @@
+minimum_score: 70
+top_n: 20
+minimum_history_sessions: 220
+require_trend: true
+
+download:
+  period: 2y
+  interval: 1d
+  batch_size: 40
+  pause_seconds: 0.8
+  retries: 3
+  timeout_seconds: 30
+  auto_adjust: true
+
+universe:
+  exchanges: [TSX, TSXV, CSE, NEO]
+  include_custom_csv: true
+  exclude_keywords:
+    - ETF
+    - EXCHANGE TRADED FUND
+    - WARRANT
+    - RIGHT
+    - DEBENTURE
+    - PREFERRED
+    - PREF SHARE
+  minimum_valid_symbols: 100
+
+signal:
+  rebound_lookback: 5
+  rebound_atr_tolerance: 0.35
+  rsi_period: 14
+  rsi_setup_level: 40
+  rsi_current_min: 35
+  rsi_current_max: 60
+  stoch_oversold: 25
+  pivot_left: 3
+  pivot_right: 3
+  structure_lookback: 80
+  volume_average_period: 20
+  bollinger_period: 20
+  bollinger_std: 2.0
+  atr_period: 14
+  stop_atr: 1.5
+  reward_risk_target_1: 2.0
+  reward_risk_target_2: 3.0
+
+market_filter:
+  enabled: false
+  symbol: XIC.TO
+  ema_period: 200
+
+discord:
+  enabled: true
+  username: Scanner Canada — Trading en Action
